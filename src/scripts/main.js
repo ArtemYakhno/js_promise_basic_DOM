@@ -16,19 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => reject(new Error()), 3000);
   });
 
-  promise1.then(addSuccess);
-  promise2.catch(addError);
+  promise1.then(addSuccess, addError);
+  promise2.then(addSuccess, addError);
 
   function addSuccess() {
     document.body.insertAdjacentHTML(
-      'afterend',
+      'beforeend',
       '<div class="message">Promise was resolved!</div>',
     );
   }
 
   function addError() {
     document.body.insertAdjacentHTML(
-      'afterend',
+      'beforeend',
       '<div class="message error-message">Promise was rejected!</div>',
     );
   }
