@@ -1,0 +1,23 @@
+"use strict";
+document.addEventListener("DOMContentLoaded", ()=>{
+    const logo = document.querySelector(".logo");
+    if (!logo) return;
+    const promise1 = new Promise((resolve, reject)=>{
+        logo.addEventListener("click", ()=>{
+            resolve();
+        });
+    });
+    const promise2 = new Promise((resolve, reject)=>{
+        setTimeout(()=>reject(new Error()), 3000);
+    });
+    promise1.then(addSuccess);
+    promise2.catch(addError);
+    function addSuccess() {
+        document.body.insertAdjacentHTML("afterend", '<div class="message">Promise was resolved!</div>');
+    }
+    function addError() {
+        document.body.insertAdjacentHTML("afterend", '<div class="message error-message">Promise was rejected!</div>');
+    }
+});
+
+//# sourceMappingURL=index.f75de5e1.js.map

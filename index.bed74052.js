@@ -1,0 +1,2 @@
+document.addEventListener("DOMContentLoaded",function(){var e=document.querySelector(".logo");if(e){var n=new Promise(function(n,t){e.addEventListener("click",function(){n()})}),t=new Promise(function(e,n){setTimeout(function(){return n(Error())},3e3)});n.then(function(){document.body.insertAdjacentHTML("afterend",'<div class="message">Promise was resolved!</div>')}),t.catch(function(){document.body.insertAdjacentHTML("afterend",'<div class="message error-message">Promise was rejected!</div>')})}});
+//# sourceMappingURL=index.bed74052.js.map
